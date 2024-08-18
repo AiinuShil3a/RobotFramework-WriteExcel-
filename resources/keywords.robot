@@ -10,12 +10,12 @@ Open Google And Search
     Press Keys      name=q                 ENTER
 
 Capture Search Result
-    [Arguments]    ${row}    ${TestCase}    ${search_term}    ${TESTER_NAME}
+    [Arguments]    ${row}    ${TestCase}    ${search_term}
     ${actual_result}=    Get Title
     ${status}=    Run Keyword And Return Status    Should Contain    ${actual_result}    ${search_term}
     ${final_status}=    Run Keyword If    ${status}    Set Variable    pass    ELSE    Set Variable    fail
     ${date}    Get Current Date    result_format=%d-%m-%Y
-    Write Test Result To Excel    ${row}    ${TestCase}    ${search_term}    ${final_status}    ${date}    ${TESTER_NAME}    ${actual_result}    ${EXCEL_FILE}
+    Write Test Result To Excel    ${row}    ${TestCase}    ${search_term}    ${final_status}    ${date}    ${NAME}    ${actual_result}    ${EXCEL_FILE}
 
 Write Test Result To Excel
     [Arguments]    ${row}    ${TestCase}    ${Username}    ${status}    ${date}    ${TESTER_NAME}    ${actual_result}    ${EXCEL_FILE}
@@ -36,6 +36,6 @@ Write Test Result To Excel
     Write Excel Cell    ${row}   3   ${actual_result}
     Write Excel Cell    ${row}   4   ${status}
     Write Excel Cell    ${row}   5   ${date}
-    Write Excel Cell    ${row}   6   ${TESTER_NAME}
+    Write Excel Cell    ${row}   6   ${NAME}
     Save Excel Document    ${EXCEL_FILE}
     Close All Excel Documents

@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2024-08-19T01:01:20.645239" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2024-08-19T01:49:04.143618" rpa="false" schemaversion="5">
 <suite id="s1" name="Google Search" source="D:\testExam\google_search.robot">
-<test id="s1-t1" name="Search Google with Term 4" line="26">
+<test id="s1-t1" name="Search Google with Term 1" line="5">
 <kw name="Open Google And Search" owner="keywords">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-08-19T01:01:21.259693" level="INFO">Opening browser 'edge' to base url 'https://www.google.com/'.</msg>
+<msg time="2024-08-19T01:49:04.829732" level="INFO">Opening browser 'edge' to base url 'https://www.google.com/'.</msg>
 <arg>https://www.google.com/</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-08-19T01:01:21.258690" elapsed="4.633658"/>
+<status status="PASS" start="2024-08-19T01:49:04.828724" elapsed="6.206795"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-08-19T01:01:25.893347" level="INFO">Typing text 'machine learning' into text field 'name=q'.</msg>
+<msg time="2024-08-19T01:49:11.035519" level="INFO">Typing text 'robot framework' into text field 'name=q'.</msg>
 <arg>name=q</arg>
 <arg>${search_term}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-08-19T01:01:25.892348" elapsed="0.100513"/>
+<status status="PASS" start="2024-08-19T01:49:11.035519" elapsed="0.096786"/>
 </kw>
 <kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2024-08-19T01:01:25.993866" level="INFO">Sending key(s) ('ENTER',) to name=q element.</msg>
-<msg time="2024-08-19T01:01:26.286057" level="INFO">Pressing special key ENTER to element.</msg>
-<msg time="2024-08-19T01:01:26.287070" level="INFO">Releasing special key ENTER.</msg>
+<msg time="2024-08-19T01:49:11.132305" level="INFO">Sending key(s) ('ENTER',) to name=q element.</msg>
+<msg time="2024-08-19T01:49:11.429748" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2024-08-19T01:49:11.429748" level="INFO">Releasing special key ENTER.</msg>
 <arg>name=q</arg>
 <arg>ENTER</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2024-08-19T01:01:25.992861" elapsed="1.783118"/>
+<status status="PASS" start="2024-08-19T01:49:11.132305" elapsed="2.862817"/>
 </kw>
-<arg>machine learning</arg>
-<status status="PASS" start="2024-08-19T01:01:21.258690" elapsed="6.517289"/>
+<arg>robot framework</arg>
+<status status="PASS" start="2024-08-19T01:49:04.828724" elapsed="9.166398"/>
 </kw>
 <kw name="Capture Search Result" owner="keywords">
 <kw name="Get Title" owner="SeleniumLibrary">
-<msg time="2024-08-19T01:01:27.782974" level="INFO">${actual_result} = machine learning - ค้นหาด้วย Google</msg>
+<msg time="2024-08-19T01:49:14.003132" level="INFO">${actual_result} = robot framework - ค้นหาด้วย Google</msg>
 <var>${actual_result}</var>
 <doc>Returns the title of the current page.</doc>
-<status status="PASS" start="2024-08-19T01:01:27.776975" elapsed="0.005999"/>
+<status status="PASS" start="2024-08-19T01:49:13.996124" elapsed="0.007008"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${actual_result}</arg>
 <arg>${search_term}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2024-08-19T01:01:27.783974" elapsed="0.001008"/>
+<status status="PASS" start="2024-08-19T01:49:14.003132" elapsed="0.000990"/>
 </kw>
-<msg time="2024-08-19T01:01:27.784982" level="INFO">${status} = True</msg>
+<msg time="2024-08-19T01:49:14.004122" level="INFO">${status} = True</msg>
 <var>${status}</var>
 <arg>Should Contain</arg>
 <arg>${actual_result}</arg>
 <arg>${search_term}</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2024-08-19T01:01:27.783974" elapsed="0.001008"/>
+<status status="PASS" start="2024-08-19T01:49:14.003132" elapsed="0.000990"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Set Variable" owner="BuiltIn">
 <arg>pass</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-08-19T01:01:27.784982" elapsed="0.000000"/>
+<status status="PASS" start="2024-08-19T01:49:14.004122" elapsed="0.000000"/>
 </kw>
-<msg time="2024-08-19T01:01:27.785977" level="INFO">${final_status} = pass</msg>
+<msg time="2024-08-19T01:49:14.004122" level="INFO">${final_status} = pass</msg>
 <var>${final_status}</var>
 <arg>${status}</arg>
 <arg>Set Variable</arg>
@@ -66,171 +66,824 @@
 <arg>Set Variable</arg>
 <arg>fail</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-08-19T01:01:27.784982" elapsed="0.000995"/>
+<status status="PASS" start="2024-08-19T01:49:14.004122" elapsed="0.000000"/>
 </kw>
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2024-08-19T01:01:27.785977" level="INFO">${date} = 19-08-2024</msg>
+<msg time="2024-08-19T01:49:14.004122" level="INFO">${date} = 19-08-2024</msg>
 <var>${date}</var>
 <arg>result_format=%d-%m-%Y</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2024-08-19T01:01:27.785977" elapsed="0.000000"/>
+<status status="PASS" start="2024-08-19T01:49:14.004122" elapsed="0.000000"/>
 </kw>
 <kw name="Write Test Result To Excel" owner="keywords">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-08-19T01:01:27.787972" level="INFO">${row} = 5</msg>
+<msg time="2024-08-19T01:49:14.005124" level="INFO">${row} = 2</msg>
 <var>${row}</var>
 <arg>int(${row})</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-08-19T01:01:27.786984" elapsed="0.000988"/>
+<status status="PASS" start="2024-08-19T01:49:14.005124" elapsed="0.000000"/>
 </kw>
 <if>
 <branch type="IF" condition="${row} == 2">
 <kw name="Create Excel Document" owner="ExcelLibrary">
 <arg>${EXCEL_FILE}</arg>
 <doc>Creates new excel document.</doc>
-<status status="NOT RUN" start="2024-08-19T01:01:27.787972" elapsed="0.000000"/>
+<status status="PASS" start="2024-08-19T01:49:14.005124" elapsed="0.000998"/>
 </kw>
 <kw name="Write Excel Cell" owner="ExcelLibrary">
 <arg>1</arg>
 <arg>1</arg>
 <arg>Test Cases</arg>
 <doc>Writes value to the cell.</doc>
-<status status="NOT RUN" start="2024-08-19T01:01:27.787972" elapsed="0.000000"/>
+<status status="PASS" start="2024-08-19T01:49:14.006122" elapsed="0.001000"/>
 </kw>
 <kw name="Write Excel Cell" owner="ExcelLibrary">
 <arg>1</arg>
 <arg>2</arg>
 <arg>Search Term</arg>
 <doc>Writes value to the cell.</doc>
-<status status="NOT RUN" start="2024-08-19T01:01:27.787972" elapsed="0.001016"/>
+<status status="PASS" start="2024-08-19T01:49:14.007122" elapsed="0.000000"/>
 </kw>
 <kw name="Write Excel Cell" owner="ExcelLibrary">
 <arg>1</arg>
 <arg>3</arg>
 <arg>Actual</arg>
 <doc>Writes value to the cell.</doc>
-<status status="NOT RUN" start="2024-08-19T01:01:27.788988" elapsed="0.000000"/>
+<status status="PASS" start="2024-08-19T01:49:14.007122" elapsed="0.000000"/>
 </kw>
 <kw name="Write Excel Cell" owner="ExcelLibrary">
 <arg>1</arg>
 <arg>4</arg>
 <arg>Result (pass, fail)</arg>
 <doc>Writes value to the cell.</doc>
-<status status="NOT RUN" start="2024-08-19T01:01:27.788988" elapsed="0.000000"/>
+<status status="PASS" start="2024-08-19T01:49:14.007122" elapsed="0.000000"/>
 </kw>
 <kw name="Write Excel Cell" owner="ExcelLibrary">
 <arg>1</arg>
 <arg>5</arg>
 <arg>Date</arg>
 <doc>Writes value to the cell.</doc>
-<status status="NOT RUN" start="2024-08-19T01:01:27.788988" elapsed="0.000000"/>
+<status status="PASS" start="2024-08-19T01:49:14.007122" elapsed="0.000000"/>
 </kw>
 <kw name="Write Excel Cell" owner="ExcelLibrary">
 <arg>1</arg>
 <arg>6</arg>
 <arg>Tester</arg>
 <doc>Writes value to the cell.</doc>
-<status status="NOT RUN" start="2024-08-19T01:01:27.788988" elapsed="0.000000"/>
+<status status="PASS" start="2024-08-19T01:49:14.007122" elapsed="0.000000"/>
 </kw>
-<status status="NOT RUN" start="2024-08-19T01:01:27.787972" elapsed="0.001016"/>
+<status status="PASS" start="2024-08-19T01:49:14.005124" elapsed="0.003006"/>
 </branch>
 <branch type="ELSE">
 <kw name="Open Excel Document" owner="ExcelLibrary">
 <arg>${EXCEL_FILE}</arg>
 <arg>doc_id=doc1</arg>
 <doc>Opens xlsx document file.</doc>
-<status status="PASS" start="2024-08-19T01:01:27.789975" elapsed="0.007004"/>
+<status status="NOT RUN" start="2024-08-19T01:49:14.008130" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-08-19T01:01:27.788988" elapsed="0.007991"/>
+<status status="NOT RUN" start="2024-08-19T01:49:14.008130" elapsed="0.000000"/>
 </branch>
-<status status="PASS" start="2024-08-19T01:01:27.787972" elapsed="0.009007"/>
+<status status="PASS" start="2024-08-19T01:49:14.005124" elapsed="0.003006"/>
 </if>
 <kw name="Write Excel Cell" owner="ExcelLibrary">
 <arg>${row}</arg>
 <arg>1</arg>
 <arg>${TestCase}</arg>
 <doc>Writes value to the cell.</doc>
-<status status="PASS" start="2024-08-19T01:01:27.796979" elapsed="0.000994"/>
+<status status="PASS" start="2024-08-19T01:49:14.008130" elapsed="0.000000"/>
 </kw>
 <kw name="Write Excel Cell" owner="ExcelLibrary">
 <arg>${row}</arg>
 <arg>2</arg>
 <arg>${Username}</arg>
 <doc>Writes value to the cell.</doc>
-<status status="PASS" start="2024-08-19T01:01:27.797973" elapsed="0.000000"/>
+<status status="PASS" start="2024-08-19T01:49:14.008130" elapsed="0.000000"/>
 </kw>
 <kw name="Write Excel Cell" owner="ExcelLibrary">
 <arg>${row}</arg>
 <arg>3</arg>
 <arg>${actual_result}</arg>
 <doc>Writes value to the cell.</doc>
-<status status="PASS" start="2024-08-19T01:01:27.797973" elapsed="0.001011"/>
+<status status="PASS" start="2024-08-19T01:49:14.008130" elapsed="0.000000"/>
 </kw>
 <kw name="Write Excel Cell" owner="ExcelLibrary">
 <arg>${row}</arg>
 <arg>4</arg>
 <arg>${status}</arg>
 <doc>Writes value to the cell.</doc>
-<status status="PASS" start="2024-08-19T01:01:27.798984" elapsed="0.000000"/>
+<status status="PASS" start="2024-08-19T01:49:14.008130" elapsed="0.000991"/>
 </kw>
 <kw name="Write Excel Cell" owner="ExcelLibrary">
 <arg>${row}</arg>
 <arg>5</arg>
 <arg>${date}</arg>
 <doc>Writes value to the cell.</doc>
-<status status="PASS" start="2024-08-19T01:01:27.798984" elapsed="0.000000"/>
+<status status="PASS" start="2024-08-19T01:49:14.009121" elapsed="0.000000"/>
 </kw>
 <kw name="Write Excel Cell" owner="ExcelLibrary">
 <arg>${row}</arg>
 <arg>6</arg>
-<arg>${TESTER_NAME}</arg>
+<arg>${NAME}</arg>
 <doc>Writes value to the cell.</doc>
-<status status="PASS" start="2024-08-19T01:01:27.799974" elapsed="0.000000"/>
+<status status="PASS" start="2024-08-19T01:49:14.009121" elapsed="0.000000"/>
 </kw>
 <kw name="Save Excel Document" owner="ExcelLibrary">
 <arg>${EXCEL_FILE}</arg>
 <doc>Saves the current document to disk.</doc>
-<status status="PASS" start="2024-08-19T01:01:27.799974" elapsed="0.018004"/>
+<status status="PASS" start="2024-08-19T01:49:14.009121" elapsed="0.012003"/>
 </kw>
 <kw name="Close All Excel Documents" owner="ExcelLibrary">
 <doc>Closes all opened documents.</doc>
-<status status="PASS" start="2024-08-19T01:01:27.817978" elapsed="0.000000"/>
+<status status="PASS" start="2024-08-19T01:49:14.021124" elapsed="0.000000"/>
 </kw>
 <arg>${row}</arg>
 <arg>${TestCase}</arg>
 <arg>${search_term}</arg>
 <arg>${final_status}</arg>
 <arg>${date}</arg>
-<arg>${TESTER_NAME}</arg>
+<arg>${NAME}</arg>
 <arg>${actual_result}</arg>
 <arg>${EXCEL_FILE}</arg>
-<status status="PASS" start="2024-08-19T01:01:27.786984" elapsed="0.030994"/>
+<status status="PASS" start="2024-08-19T01:49:14.004122" elapsed="0.017002"/>
+</kw>
+<arg>2</arg>
+<arg>TC1</arg>
+<arg>robot framework</arg>
+<status status="PASS" start="2024-08-19T01:49:13.996124" elapsed="0.025998"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-08-19T01:49:14.022122" elapsed="2.245822"/>
+</kw>
+<doc>This test case searches for the term 'robot framework' on Google and verifies that the page title contains the search term.</doc>
+<tag>Search</tag>
+<status status="PASS" start="2024-08-19T01:49:04.827724" elapsed="11.440220"/>
+</test>
+<test id="s1-t2" name="Search Google with Term 2" line="12">
+<kw name="Open Google And Search" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-08-19T01:49:16.270945" level="INFO">Opening browser 'edge' to base url 'https://www.google.com/'.</msg>
+<arg>https://www.google.com/</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-08-19T01:49:16.269946" elapsed="3.554559"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-08-19T01:49:19.825506" level="INFO">Typing text 'selenium' into text field 'name=q'.</msg>
+<arg>name=q</arg>
+<arg>${search_term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-19T01:49:19.824505" elapsed="0.086539"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-08-19T01:49:19.912046" level="INFO">Sending key(s) ('ENTER',) to name=q element.</msg>
+<msg time="2024-08-19T01:49:20.194761" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2024-08-19T01:49:20.194761" level="INFO">Releasing special key ENTER.</msg>
+<arg>name=q</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-08-19T01:49:19.912046" elapsed="3.869579"/>
+</kw>
+<arg>selenium</arg>
+<status status="PASS" start="2024-08-19T01:49:16.269946" elapsed="7.511679"/>
+</kw>
+<kw name="Capture Search Result" owner="keywords">
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2024-08-19T01:49:23.789614" level="INFO">${actual_result} = selenium - ค้นหาด้วย Google</msg>
+<var>${actual_result}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2024-08-19T01:49:23.782624" elapsed="0.006990"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${actual_result}</arg>
+<arg>${search_term}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-08-19T01:49:23.789614" elapsed="0.001007"/>
+</kw>
+<msg time="2024-08-19T01:49:23.790621" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Contain</arg>
+<arg>${actual_result}</arg>
+<arg>${search_term}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-08-19T01:49:23.789614" elapsed="0.001007"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>pass</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-08-19T01:49:23.790621" elapsed="0.000000"/>
+</kw>
+<msg time="2024-08-19T01:49:23.790621" level="INFO">${final_status} = pass</msg>
+<var>${final_status}</var>
+<arg>${status}</arg>
+<arg>Set Variable</arg>
+<arg>pass</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>fail</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-08-19T01:49:23.790621" elapsed="0.000000"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-08-19T01:49:23.791621" level="INFO">${date} = 19-08-2024</msg>
+<var>${date}</var>
+<arg>result_format=%d-%m-%Y</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-08-19T01:49:23.791621" elapsed="0.000000"/>
+</kw>
+<kw name="Write Test Result To Excel" owner="keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-08-19T01:49:23.792618" level="INFO">${row} = 3</msg>
+<var>${row}</var>
+<arg>int(${row})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-08-19T01:49:23.792618" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${row} == 2">
+<kw name="Create Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_FILE}</arg>
+<doc>Creates new excel document.</doc>
+<status status="NOT RUN" start="2024-08-19T01:49:23.793614" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>1</arg>
+<arg>1</arg>
+<arg>Test Cases</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-08-19T01:49:23.793614" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>1</arg>
+<arg>2</arg>
+<arg>Search Term</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-08-19T01:49:23.793614" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>1</arg>
+<arg>3</arg>
+<arg>Actual</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-08-19T01:49:23.793614" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>1</arg>
+<arg>4</arg>
+<arg>Result (pass, fail)</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-08-19T01:49:23.793614" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>1</arg>
+<arg>5</arg>
+<arg>Date</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-08-19T01:49:23.794613" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>1</arg>
+<arg>6</arg>
+<arg>Tester</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-08-19T01:49:23.794613" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-08-19T01:49:23.792618" elapsed="0.001995"/>
+</branch>
+<branch type="ELSE">
+<kw name="Open Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_FILE}</arg>
+<arg>doc_id=doc1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" start="2024-08-19T01:49:23.794613" elapsed="0.007008"/>
+</kw>
+<status status="PASS" start="2024-08-19T01:49:23.794613" elapsed="0.007008"/>
+</branch>
+<status status="PASS" start="2024-08-19T01:49:23.792618" elapsed="0.009003"/>
+</if>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>1</arg>
+<arg>${TestCase}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-08-19T01:49:23.801621" elapsed="0.001000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>2</arg>
+<arg>${Username}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-08-19T01:49:23.802621" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>3</arg>
+<arg>${actual_result}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-08-19T01:49:23.802621" elapsed="0.001003"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>4</arg>
+<arg>${status}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-08-19T01:49:23.803624" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>5</arg>
+<arg>${date}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-08-19T01:49:23.803624" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>6</arg>
+<arg>${NAME}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-08-19T01:49:23.803624" elapsed="0.000998"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_FILE}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="PASS" start="2024-08-19T01:49:23.804622" elapsed="0.009991"/>
+</kw>
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-08-19T01:49:23.814613" elapsed="0.000000"/>
+</kw>
+<arg>${row}</arg>
+<arg>${TestCase}</arg>
+<arg>${search_term}</arg>
+<arg>${final_status}</arg>
+<arg>${date}</arg>
+<arg>${NAME}</arg>
+<arg>${actual_result}</arg>
+<arg>${EXCEL_FILE}</arg>
+<status status="PASS" start="2024-08-19T01:49:23.791621" elapsed="0.022992"/>
+</kw>
+<arg>3</arg>
+<arg>TC2</arg>
+<arg>selenium</arg>
+<status status="PASS" start="2024-08-19T01:49:23.782624" elapsed="0.031989"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-08-19T01:49:23.815621" elapsed="2.284735"/>
+</kw>
+<doc>This test case searches for the term 'selenium' on Google and verifies that the page title contains the search term.</doc>
+<tag>Search</tag>
+<status status="PASS" start="2024-08-19T01:49:16.268946" elapsed="9.832412"/>
+</test>
+<test id="s1-t3" name="Search Google with Term 3" line="19">
+<kw name="Open Google And Search" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-08-19T01:49:26.103359" level="INFO">Opening browser 'edge' to base url 'https://www.google.com/'.</msg>
+<arg>https://www.google.com/</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-08-19T01:49:26.103359" elapsed="4.450805"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-08-19T01:49:30.555163" level="INFO">Typing text 'python' into text field 'name=q'.</msg>
+<arg>name=q</arg>
+<arg>${search_term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-19T01:49:30.554164" elapsed="0.089526"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-08-19T01:49:30.643690" level="INFO">Sending key(s) ('ENTER',) to name=q element.</msg>
+<msg time="2024-08-19T01:49:30.932927" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2024-08-19T01:49:30.932927" level="INFO">Releasing special key ENTER.</msg>
+<arg>name=q</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-08-19T01:49:30.643690" elapsed="3.603590"/>
+</kw>
+<arg>python</arg>
+<status status="PASS" start="2024-08-19T01:49:26.103359" elapsed="8.143921"/>
+</kw>
+<kw name="Capture Search Result" owner="keywords">
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2024-08-19T01:49:34.255283" level="INFO">${actual_result} = python - ค้นหาด้วย Google</msg>
+<var>${actual_result}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2024-08-19T01:49:34.248291" elapsed="0.006992"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${actual_result}</arg>
+<arg>${search_term}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-08-19T01:49:34.255283" elapsed="0.000998"/>
+</kw>
+<msg time="2024-08-19T01:49:34.256281" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Contain</arg>
+<arg>${actual_result}</arg>
+<arg>${search_term}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-08-19T01:49:34.255283" elapsed="0.000998"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>pass</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-08-19T01:49:34.256281" elapsed="0.000000"/>
+</kw>
+<msg time="2024-08-19T01:49:34.256281" level="INFO">${final_status} = pass</msg>
+<var>${final_status}</var>
+<arg>${status}</arg>
+<arg>Set Variable</arg>
+<arg>pass</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>fail</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-08-19T01:49:34.256281" elapsed="0.000991"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-08-19T01:49:34.257272" level="INFO">${date} = 19-08-2024</msg>
+<var>${date}</var>
+<arg>result_format=%d-%m-%Y</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-08-19T01:49:34.257272" elapsed="0.000000"/>
+</kw>
+<kw name="Write Test Result To Excel" owner="keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-08-19T01:49:34.258280" level="INFO">${row} = 4</msg>
+<var>${row}</var>
+<arg>int(${row})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-08-19T01:49:34.258280" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${row} == 2">
+<kw name="Create Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_FILE}</arg>
+<doc>Creates new excel document.</doc>
+<status status="NOT RUN" start="2024-08-19T01:49:34.259280" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>1</arg>
+<arg>1</arg>
+<arg>Test Cases</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-08-19T01:49:34.259280" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>1</arg>
+<arg>2</arg>
+<arg>Search Term</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-08-19T01:49:34.259280" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>1</arg>
+<arg>3</arg>
+<arg>Actual</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-08-19T01:49:34.259280" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>1</arg>
+<arg>4</arg>
+<arg>Result (pass, fail)</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-08-19T01:49:34.259280" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>1</arg>
+<arg>5</arg>
+<arg>Date</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-08-19T01:49:34.259280" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>1</arg>
+<arg>6</arg>
+<arg>Tester</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-08-19T01:49:34.260280" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-08-19T01:49:34.258280" elapsed="0.002000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Open Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_FILE}</arg>
+<arg>doc_id=doc1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" start="2024-08-19T01:49:34.260280" elapsed="0.005534"/>
+</kw>
+<status status="PASS" start="2024-08-19T01:49:34.260280" elapsed="0.005534"/>
+</branch>
+<status status="PASS" start="2024-08-19T01:49:34.258280" elapsed="0.008534"/>
+</if>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>1</arg>
+<arg>${TestCase}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-08-19T01:49:34.266814" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>2</arg>
+<arg>${Username}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-08-19T01:49:34.266814" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>3</arg>
+<arg>${actual_result}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-08-19T01:49:34.267815" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>4</arg>
+<arg>${status}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-08-19T01:49:34.267815" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>5</arg>
+<arg>${date}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-08-19T01:49:34.267815" elapsed="0.001000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>6</arg>
+<arg>${NAME}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-08-19T01:49:34.268815" elapsed="0.000000"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_FILE}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="PASS" start="2024-08-19T01:49:34.268815" elapsed="0.011000"/>
+</kw>
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-08-19T01:49:34.279815" elapsed="0.000000"/>
+</kw>
+<arg>${row}</arg>
+<arg>${TestCase}</arg>
+<arg>${search_term}</arg>
+<arg>${final_status}</arg>
+<arg>${date}</arg>
+<arg>${NAME}</arg>
+<arg>${actual_result}</arg>
+<arg>${EXCEL_FILE}</arg>
+<status status="PASS" start="2024-08-19T01:49:34.257272" elapsed="0.022543"/>
+</kw>
+<arg>4</arg>
+<arg>TC3</arg>
+<arg>python</arg>
+<status status="PASS" start="2024-08-19T01:49:34.248291" elapsed="0.031524"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-08-19T01:49:34.280817" elapsed="2.256370"/>
+</kw>
+<doc>This test case searches for the term 'python' on Google and verifies that the page title contains the search term.</doc>
+<tag>Search</tag>
+<status status="PASS" start="2024-08-19T01:49:26.102356" elapsed="10.434831"/>
+</test>
+<test id="s1-t4" name="Search Google with Term 4" line="26">
+<kw name="Open Google And Search" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-08-19T01:49:36.540188" level="INFO">Opening browser 'edge' to base url 'https://www.google.com/'.</msg>
+<arg>https://www.google.com/</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-08-19T01:49:36.539188" elapsed="3.587493"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-08-19T01:49:40.126681" level="INFO">Typing text 'machine learning' into text field 'name=q'.</msg>
+<arg>name=q</arg>
+<arg>${search_term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-19T01:49:40.126681" elapsed="0.101533"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-08-19T01:49:40.229216" level="INFO">Sending key(s) ('ENTER',) to name=q element.</msg>
+<msg time="2024-08-19T01:49:40.518869" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2024-08-19T01:49:40.518869" level="INFO">Releasing special key ENTER.</msg>
+<arg>name=q</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-08-19T01:49:40.228214" elapsed="1.622938"/>
+</kw>
+<arg>machine learning</arg>
+<status status="PASS" start="2024-08-19T01:49:36.539188" elapsed="5.311964"/>
+</kw>
+<kw name="Capture Search Result" owner="keywords">
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2024-08-19T01:49:41.859147" level="INFO">${actual_result} = machine learning - ค้นหาด้วย Google</msg>
+<var>${actual_result}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2024-08-19T01:49:41.852140" elapsed="0.007007"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${actual_result}</arg>
+<arg>${search_term}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-08-19T01:49:41.860158" elapsed="0.000000"/>
+</kw>
+<msg time="2024-08-19T01:49:41.860158" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Should Contain</arg>
+<arg>${actual_result}</arg>
+<arg>${search_term}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-08-19T01:49:41.860158" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>pass</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-08-19T01:49:41.861154" elapsed="0.000000"/>
+</kw>
+<msg time="2024-08-19T01:49:41.861154" level="INFO">${final_status} = pass</msg>
+<var>${final_status}</var>
+<arg>${status}</arg>
+<arg>Set Variable</arg>
+<arg>pass</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>fail</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-08-19T01:49:41.860158" elapsed="0.000996"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-08-19T01:49:41.861154" level="INFO">${date} = 19-08-2024</msg>
+<var>${date}</var>
+<arg>result_format=%d-%m-%Y</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-08-19T01:49:41.861154" elapsed="0.000000"/>
+</kw>
+<kw name="Write Test Result To Excel" owner="keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-08-19T01:49:41.863152" level="INFO">${row} = 5</msg>
+<var>${row}</var>
+<arg>int(${row})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-08-19T01:49:41.862144" elapsed="0.001008"/>
+</kw>
+<if>
+<branch type="IF" condition="${row} == 2">
+<kw name="Create Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_FILE}</arg>
+<doc>Creates new excel document.</doc>
+<status status="NOT RUN" start="2024-08-19T01:49:41.863152" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>1</arg>
+<arg>1</arg>
+<arg>Test Cases</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-08-19T01:49:41.863152" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>1</arg>
+<arg>2</arg>
+<arg>Search Term</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-08-19T01:49:41.864153" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>1</arg>
+<arg>3</arg>
+<arg>Actual</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-08-19T01:49:41.864153" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>1</arg>
+<arg>4</arg>
+<arg>Result (pass, fail)</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-08-19T01:49:41.864153" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>1</arg>
+<arg>5</arg>
+<arg>Date</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-08-19T01:49:41.864153" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>1</arg>
+<arg>6</arg>
+<arg>Tester</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" start="2024-08-19T01:49:41.864153" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-08-19T01:49:41.863152" elapsed="0.001001"/>
+</branch>
+<branch type="ELSE">
+<kw name="Open Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_FILE}</arg>
+<arg>doc_id=doc1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" start="2024-08-19T01:49:41.865145" elapsed="0.005541"/>
+</kw>
+<status status="PASS" start="2024-08-19T01:49:41.864153" elapsed="0.006533"/>
+</branch>
+<status status="PASS" start="2024-08-19T01:49:41.863152" elapsed="0.007534"/>
+</if>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>1</arg>
+<arg>${TestCase}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-08-19T01:49:41.870686" elapsed="0.001007"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>2</arg>
+<arg>${Username}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-08-19T01:49:41.871693" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>3</arg>
+<arg>${actual_result}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-08-19T01:49:41.871693" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>4</arg>
+<arg>${status}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-08-19T01:49:41.872686" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>5</arg>
+<arg>${date}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-08-19T01:49:41.872686" elapsed="0.000000"/>
+</kw>
+<kw name="Write Excel Cell" owner="ExcelLibrary">
+<arg>${row}</arg>
+<arg>6</arg>
+<arg>${NAME}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" start="2024-08-19T01:49:41.872686" elapsed="0.001009"/>
+</kw>
+<kw name="Save Excel Document" owner="ExcelLibrary">
+<arg>${EXCEL_FILE}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="PASS" start="2024-08-19T01:49:41.873695" elapsed="0.011003"/>
+</kw>
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-08-19T01:49:41.884698" elapsed="0.000996"/>
+</kw>
+<arg>${row}</arg>
+<arg>${TestCase}</arg>
+<arg>${search_term}</arg>
+<arg>${final_status}</arg>
+<arg>${date}</arg>
+<arg>${NAME}</arg>
+<arg>${actual_result}</arg>
+<arg>${EXCEL_FILE}</arg>
+<status status="PASS" start="2024-08-19T01:49:41.862144" elapsed="0.023550"/>
 </kw>
 <arg>5</arg>
 <arg>TC4</arg>
 <arg>machine learning</arg>
-<arg>Supphalak</arg>
-<status status="PASS" start="2024-08-19T01:01:27.776975" elapsed="0.041003"/>
+<status status="PASS" start="2024-08-19T01:49:41.852140" elapsed="0.033554"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-08-19T01:01:27.818975" elapsed="2.237081"/>
+<status status="PASS" start="2024-08-19T01:49:41.885694" elapsed="2.212719"/>
 </kw>
 <doc>This test case searches for the term 'machine learning' on Google and verifies that the page title contains the search term.</doc>
-<tag>Search2</tag>
-<status status="PASS" start="2024-08-19T01:01:21.257693" elapsed="8.799356"/>
+<tag>Search</tag>
+<status status="PASS" start="2024-08-19T01:49:36.538189" elapsed="7.561206"/>
 </test>
-<status status="PASS" start="2024-08-19T01:01:20.647251" elapsed="9.410801"/>
+<status status="PASS" start="2024-08-19T01:49:04.145610" elapsed="39.954784"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Search2</stat>
+<stat pass="4" fail="0" skip="0">Search</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Google Search">Google Search</stat>
+<stat pass="4" fail="0" skip="0" id="s1" name="Google Search">Google Search</stat>
 </suite>
 </statistics>
 <errors>
