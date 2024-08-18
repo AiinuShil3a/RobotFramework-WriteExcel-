@@ -1,0 +1,16 @@
+[Tags]    Search
+-------------------------------------------------------
+robot --include Search tests/
+robot --exclude Search tests/
+-------------------------------------------------------
+robot --include Search google_search.robot
+robot --exclude Search google_search.robot
+-------------------------------------------------------
+--include: รันเฉพาะ Test Cases ที่มีแท็กที่ระบุ
+--exclude: ข้ามการรัน Test Cases ที่มีแท็กที่ระบุ
+-------------------------------------------------------
+-------------------------------------------------------
+[Documentation]    This test case searches for the term 'robot framework' on Google and verifies that the page title contains the search term.
+-------------------------------------------------------
+ใช้สำหรับเพิ่มคำอธิบายหรือรายละเอียดให้กับ Test Cases, Test Suites, หรือ Keywords ซึ่งช่วยให้ผู้อ่านหรือผู้ใช้เข้าใจวัตถุประสงค์และวิธีการทำงานของการทดสอบหรือฟังก์ชันนั้น ๆ ได้ชัดเจนยิ่งขึ้น
+-------------------------------------------------------
